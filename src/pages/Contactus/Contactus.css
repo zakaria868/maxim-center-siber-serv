@@ -1,0 +1,177 @@
+/* Branches Sidebar */
+.branches-sidebar {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-header h4 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+.search-box .form-control {
+  border-radius: 25px;
+  border: 1px solid #ddd;
+}
+
+.search-btn {
+  border-radius: 25px;
+  padding: 8px 20px;
+  white-space: nowrap;
+}
+
+/* Branches List */
+.branches-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.branch-item {
+  padding: 15px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.branch-item:hover {
+  background: #f8f9fa;
+}
+
+.branch-item.active {
+  background: #f0fff0;
+  border-right: 4px solid #90ee90;
+}
+
+.branch-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.branch-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-right: 25px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.contact-btn.phone:hover {
+  color: #007bff;
+}
+
+.contact-btn.whatsapp:hover {
+  color: #25d366;
+}
+
+.branch-arrow {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  font-size: 12px;
+}
+
+
+
+.space-sora{
+  margin: 50px;
+  
+}
+
+
+
+
+
+
+
+.image-container {
+  position: relative; /* يخلي الصورة حاوية للـ overlay */
+}
+
+.branchcard-overlay {
+  position: absolute;
+  top: 470px; /* ينزل للثلث السفلي */
+  left: 630px;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 500px;
+}
+
+.branchcard-overlay .card {
+  background-color: rgba(255, 255, 255, 0.85); /* أبيض شفاف */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+
+
+
+.breadcrumb-container {
+  position: relative;
+  direction: rtl; /* عشان العربي يبدأ من اليمين */
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: flex-start; /* النص والأيقونة يلتصقوا باليمين */
+  align-items: center;
+  color: #1f1f1f;
+  font-weight: bold;
+  font-size: 20px;
+  background-image: url('../../assets/images/shretakhdar.jpg'); /* عدل مسار الصورة */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  height: 69px;
+}
+
+.breadcrumb-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(14, 215, 14, 0.47); /* 0.27 = نسبة الشفافية */
+  z-index: 0;
+}
+
+.breadcrumb-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* مسافة صغيرة بين الأيقونة والنص */
+  color: #1f1f1f;
+}
+
+.home-icon img {
+  width: 25px;
+  height: 25px;
+  
+}

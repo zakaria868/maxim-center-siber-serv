@@ -1,0 +1,164 @@
+.direction {
+  direction: ltr;
+  text-align: left;
+}
+
+
+.my-footer {
+  padding-bottom: 0 !important;
+}
+
+
+.footer {
+  background-color: #b2ffb2; /* أخضر فاتح */
+  
+  padding: 1rem 0 0 0;
+  text-align: right;
+  font-family: Arial, sans-serif;
+  
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.footer-subscribe p {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.footer-subscribe form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-subscribe input[type="email"] {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.footer-subscribe button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #4caf50;
+  background-color: #4ed753;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.footer-social a {
+  margin-left: 0.5rem;
+  font-size: 20px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #4caf50;
+}
+
+.footer-links h4 {
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-about img {
+  max-width: 120px;
+  margin-bottom: 1rem;
+}
+
+.footer-about p {
+  max-width: 250px;
+}
+
+.footer-bottom {
+  margin-top: 2.5rem;
+  text-align: center;
+  background-color: #80ff80; /* أخضر أغمق قليلاً */
+  padding: .5rem;
+
+
+}
+
+.footer-bottom p {
+  margin: 0;
+  width: 100%;
+}
+
+
+
+.footer-links li span {
+  margin-left: 5px;
+  color: black; /* أو أي لون يناسب تصميمك */
+  font-weight: bold;
+}
+
+
+
+
+.subscribe-form .input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  direction: rtl;
+}
+
+.subscribe-form input[type="email"] {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 6rem;
+  border: none; /* ✅ شيل البوردر */
+  border-radius: 4px;
+  background-color: #f9f9f9; /* اختياري - خلفية خفيفة */
+  text-align: right;
+  font-family: inherit;
+  outline: none; /* ✅ يمنع ظهور خط عند التركيز */
+}
+
+
+.subscribe-form button {
+  position: absolute;
+  left: 0.5rem; /* لأنه RTL */
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.4rem 1rem;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-icon {
+  position: absolute;
+  right: 0.8rem; /* أيقونة الجواب تظهر في يمين الحقل */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+}
+
+
+
+/* أيقونات Font Awesome */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");

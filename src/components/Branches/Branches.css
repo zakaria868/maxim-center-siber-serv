@@ -1,0 +1,128 @@
+.accordion-button {
+  display: flex;
+  flex-direction: row;       /* ترتيب أفقي */
+  justify-content: space-between;
+  align-items: center;
+  text-align: right;         /* لأننا RTL */
+}
+
+.accordion-button::after {
+  order: 2;                  /* نخلي السهم يجي أقصى اليسار */
+  margin-left: 0;
+  margin-right: auto;        /* يدفع السهم لليسار */
+
+  transform: rotate(90deg);
+}
+
+
+/* لما يكون الأكورديون مفتوح */
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(0deg);   /* يخلي السهم يطلع لفوق */
+}
+
+
+.branch-name {
+  margin-right: 0.5rem;      /* مسافة صغيرة بين الاسم والأيقونة */
+}
+
+.branch-header {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;               /* مسافة بسيطة بين الأيقونة والاسم */
+  order: -1;                 /* نخليهم ييجوا قبل السهم */
+}
+
+
+
+
+
+
+
+.accordion-form-wrapper {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background: #f9f9f9;
+  
+}
+
+.subscribe-form {
+  margin: 0;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.input-wrapper input {
+  flex: 1;
+  padding: 8px 10px;
+  border: none;
+  outline: none;
+}
+
+.input-wrapper button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.input-wrapper button:hover {
+  background: #0056b3;
+}
+
+.input-icon {
+  padding: 0 10px;
+  color: #888;
+}
+
+
+
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 850px; /* هنا زوّد العرض */
+  max-width: 100%; /* عشان ما يتقصّش لو الشاشة أصغر */
+}
+
+
+.input-icon {
+  position: absolute;
+  right: 10px; /* مكان الأيقونة */
+  color: #666;
+}
+
+.input-wrapper input {
+  padding-right: 35px; /* مساحة للأيقونة عشان النص ما يدخلش فيها */
+  text-align: right; /* النص يبدأ من اليمين */
+  direction: rtl;
+}
+
+
+
+
+
+.subscribe-form button {
+  background-color: #4CAF50; /* أخضر فاتح */
+  color: #fff; /* لون الخط أبيض */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: #45a049; /* أخضر أغمق شوية عند الـ hover */
+}
+
+

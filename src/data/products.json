@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "فستان بأطلالة حمراء",
+    "price": "140 ر.س",
+    "image": "/iimages/dressred.png"
+  },
+  {
+    "id": 2,
+    "title": "فستان مناسبة",
+    "price": "140 ر.س",
+    "image": "/iimages/dressmove.png"
+  },
+  {
+    "id": 3,
+    "title": "فستان سهرة 2025",
+    "price": "140 ر.س",
+    "image": "/iimages/dressgreen.png"
+  },
+  {
+    "id": 4,
+    "title": "مناسبة زفاف",
+    "price": "140 ر.س",
+    "image": "/iimages/dressblack.png"
+  }
+]

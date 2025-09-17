@@ -1,0 +1,30 @@
+
+
+.dropdown-menu-custom {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 12px;
+  min-width: 220px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.dropdown-title {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+}
+
+.radio-left {
+  display: flex;
+  flex-direction: row-reverse; /* النص يمين والراديو شمال */
+  justify-content:space-between; /* الراديو أقصى شمال */
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}

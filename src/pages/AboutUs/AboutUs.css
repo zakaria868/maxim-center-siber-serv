@@ -1,0 +1,300 @@
+.custom-jumbotron {
+  background-color: transparent;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.jumbotron-title {
+  
+  font-size: 30px;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.jumbotron-text {
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+.jumbotron-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: auto;
+}
+
+.line1 {
+   width: 100%;
+white-space: nowrap;
+ 
+}   /* أطول سطر */
+.line2 {
+   width: 80%;
+   white-space: nowrap;
+   
+   margin: auto;
+   }    /* أقصر شوية */
+.line3 {
+   width: 60%;
+   white-space: nowrap;
+   
+   margin: auto;
+   }    /* أقصر واحد */
+
+
+   .jumbotron-text p {
+  font-size: 1rem;   /* حجم الخط */
+  line-height: 1.8;  /* المسافة بين الأسطر */
+}
+
+
+
+   .line4 {
+   width: 100%;
+white-space: nowrap;
+ 
+}   /* أطول سطر */
+.line5 {
+   width: 80%;
+   white-space: nowrap;
+   
+   margin: auto;
+   }    /* أقصر شوية */
+.line6 {
+   width: 60%;
+   white-space: nowrap;
+   
+   margin: auto;
+   }    /* أقصر واحد */
+
+/*    jumptrun*/
+
+
+.margin-jumb-trun{
+  margin-top:40px ;
+  margin-bottom:40px ;
+}
+
+
+/* fourPICTRE*/
+
+/* TWO PRAGRAPH*/
+
+/* CARDS*/
+
+
+
+
+
+.about-images-row {
+  margin-top: 20px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-around; /* يبدأ الصور من اليسار */
+  gap: 5px; /* ↓ بدل 20px خليها 10px أو أقل */
+  padding-left: 80px; /* ↓ قللها بدل 80px */
+}
+
+.images-wrapper {
+  display: flex;
+  justify-content: center;   /* يخلي الصور في النص */
+  gap: 8px;                  /* المسافة بين كل صورة والتانية */
+  flex-wrap: wrap; 
+  border-radius: 20px;
+    gap: 20px;          /* يخلي الصور تنزل سطر تاني لو الشاشة صغيرة */
+}
+
+.about-image {
+  
+}
+
+
+
+
+
+.about-image {
+  width: 200px;   /* عرض الصورة */
+  height: 300px;  /* طول الصورة */
+  object-fit: cover; /* يحافظ على شكل الصورة */
+
+  border-radius: 12px;
+}
+
+
+.sorataltaabout {
+ margin-top: -30px;
+}
+
+
+
+
+
+
+.images-owner{
+  margin-bottom: 60px;
+}
+
+
+
+
+.aien-zarfabout{
+
+
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+  
+}
+
+
+
+.blog-card h5 {
+  margin: 0;
+  direction: rtl;
+  text-align: right;
+}
+
+
+
+.space-zarfabout{
+margin-left: 12px;
+} 
+
+
+.text-faded{
+ opacity: 0.5; 
+
+}
+
+.transparent-card {
+  background-color: transparent !important;
+  box-shadow: none;
+}
+ .margin-aien{
+padding-right:170px;
+ }
+
+
+.size-images{
+  width:px ;
+  height: px;
+  
+  
+}
+
+
+.equal-images {
+  width: 100px;
+  height: 100px;   /* خلي الطول ثابت */
+  object-fit: cover; /* يظبط الصورة من غير ما يمدها أو يشوهها */
+}
+.about-image {
+  
+  width: 80%;      /* الصورة تملى عرض العمود */
+  height: 350px;     /* تخليها تملى طول العمود لو العمود طويل */
+  object-fit: cover; /* يحافظ على نسبة أبعاد الصورة */
+  border-radius: 12px;
+  
+}
+
+
+
+
+
+.soraolaabout{
+   margin-top: -30px;
+}
+
+
+.card-body .text-right {
+  padding-right: px; /* زود القيمة على حسب ما تحب */
+}
+
+
+
+
+
+
+
+
+.breadcrumb-container {
+  position: relative;
+  direction: rtl; /* عشان العربي يبدأ من اليمين */
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: flex-start; /* النص والأيقونة يلتصقوا باليمين */
+  align-items: center;
+  color: #1f1f1f;
+  font-weight: bold;
+  font-size: 20px;
+  background-image: url('../../assets/images/shretakhdar.jpg'); /* عدل مسار الصورة */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  height: 69px;
+}
+
+.breadcrumb-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(14, 215, 14, 0.47); /* 0.27 = نسبة الشفافية */
+  z-index: 0;
+}
+
+.breadcrumb-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* مسافة صغيرة بين الأيقونة والنص */
+  color: #1f1f1f;
+}
+
+.home-icon img {
+  width: 25px;
+  height: 25px;
+  
+}
+
+
+
+
+
+
+
+
+
+.about-images-row {
+  margin-top: 20px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-around; /* توزيع الصور */
+  gap: 5px; /* مسافة صغيرة بين الصور */
+  padding-left: 80px; /* فراغ من الشمال */
+}
+
+.images-wrapper {
+  display: flex;
+  justify-content: center;   /* يخلي الصور في النص */
+  gap: 20px;                 /* المسافة بين الصور */
+  flex-wrap: wrap;           /* يخلي الصور تنزل تحت لو الشاشة صغيرة */
+  border-radius: 20px;
+}
+
+.about-image {
+  width: 200px;     /* عرض الصورة */
+  height: 300px;    /* طول الصورة */
+  object-fit: cover; /* يحافظ على نسبة الصورة من غير ما تتمدد */
+  border-radius: 12px;
+}
+
+.sorataltaabout {
+  margin-top: -30px; /* صورة طالعة لفوق شوية */
+}
+
+.soraolaabout {
+  margin-top: -30px; /* صورة طالعة لفوق شوية */
+}

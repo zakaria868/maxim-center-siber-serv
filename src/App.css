@@ -1,0 +1,226 @@
+
+body {
+  font-family: 'Almarai', sans-serif !important;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel-wrapper .carousel {
+  z-index: 1;
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  color: white; /* أو اللون اللي تحبه */
+  text-align: center;
+  z-index: 2;
+}
+
+
+
+
+.centered-text {
+  text-align: right;
+  direction: rtl;
+}
+
+
+.text-right{
+  text-align: right;
+}
+
+
+.mb-30{
+  margin-bottom: 90px;
+}
+
+
+.mt-60{
+  margin-top: 60px;
+}
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'Almarai';
+  src: url('./assets/fonts/Almarai/Almarai-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+.bold-arabic {
+  font-family: 'Almarai', sans-serif;
+  font-style: bold;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: right;
+  white-space: noWrap;
+  line-height: 1.2;
+  text-align: right;
+}
+ 
+
+
+
+.align-right-text{
+  text-align: right;
+  direction:rtl;
+}
+
+.position-relative {
+  position: relative;
+}
+.position-absolute{
+
+  position: absolute;
+  
+  left: 100px;
+  right: -50px;
+  bottom: px;
+
+  transform: translate(-60px, -250px);
+  text-align: center;
+  color: blue; 
+}
+.carousel-wrapper .centered-text .bold-arabic .first-word {
+ font-size:50px;
+}
+.carousel-wrapper .centered-text .bold-arabic .modern-style {
+  /* تأثيراتك هنا */
+   color:white;
+    font-size:50px;
+   
+}
+.bold-arabic {
+  white-space: nowrap; 
+}
+
+.subtext {
+  font-size: 22px;
+  line-height: 1.6;
+  color: white;
+  white-space: pre-line; /* تحافظ على كسر السطر */
+}
+
+
+.lead{
+  
+}
+
+
+
+.arabic-highlight {
+    font-weight: bold;
+  color: #b2f2bb;
+  font-size: 30px;
+}
+
+
+
+.jumbotron p.lead {
+  /*font-family: 'Cairo', sans-serif; /* أو أي خط عربي */
+  font-size: 30px;
+  color: #333;
+  line-height: 1.8;
+}
+  
+
+
+
+.arabic-style {
+  font-weight: bold;
+  color:white; /* وردي مثلا */
+  font-size: 1.2rem;
+  font-size: 30px;
+}
+
+
+
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+
+
+
+
+.starandnumber {
+  position: absolute;
+  top: 10px;      /* المسافة من فوق */
+  left: 10px;     /* المسافة من اليسار */
+  display: flex;
+  align-items: center;
+  gap: 5px;       /* مسافة بين الرقم والنجمة */
+  z-index: 2;     /* يطلع فوق الصورة */
+}
+
+
+
+.display-4{
+  font-weight: 600;
+  font-style: bold;
+  font-size: 50px;
+}
+.lead p{
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+}

@@ -1,0 +1,187 @@
+
+.sidebar-filter {
+  background: transparent;
+  
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Cairo", sans-serif;
+  direction: rtl;       /* ← الاتجاه من اليمين للشمال */
+  text-align: right;    /* ← محاذاة النص يمين */
+}
+
+
+.sidebar-filter h5 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar-filter .count {
+  color: #777;
+  font-size: 14px;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.filter-item {
+  display: flex;
+  justify-content: flex-start;  /* الكلمة + الرقم ييجوا يمين */
+  gap: 6px;                     /* مسافة صغيرة بينهم */
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+.filter-item:hover {
+  color: #ff4081;
+}
+
+.price-filter {
+  display: flex;
+  align-items: center;
+}
+
+.price-input {
+  width: 124px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.price-separator {
+  margin: 0 8px;
+  font-weight: bold;
+
+}
+
+.color-box {
+  width: 200px;    /* العرض اللي انت عايزه */
+  height: 50px;   /* الطول اللي انت عايزه */
+    /* إطار خارجي لو تحب */
+  padding: 10px;   /* مسافة داخلية */
+  overflow: auto;  /* لو الألوان زادت هيتعمل Scroll */
+}
+
+
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;        /* مسافة صغيرة بين الدواير */
+}
+
+
+
+
+.color-circle:hover {
+
+}
+
+
+
+
+.sidebar-filter ul {
+  padding-right: 0;   /* يشيل المسافة الافتراضية من اليمين */
+  list-style: none;   /* يشيل النقاط السوداء لو فيه */
+  text-align: right;  /* يخلي النص يمين خالص */
+}
+
+
+
+.sidebar-filter h5 {
+  font-weight: bold;
+  font-size: 18px;   /* تتحكم في الحجم */
+  color: #000;       /* تغير اللون */
+}
+
+
+.sidebar-filter .count {
+  color: #000;    /* لون مميز */
+  font-size: 18px;   /* حجم أصغر شوية */
+  font-weight: bold;
+}
+
+
+
+
+.filter-title {
+  font-weight: bold;   /* تخليها عريضة */
+  font-size: 18px;     /* تكبر حجم الخط */
+  color: #000;      /* تغير اللون */
+  margin-bottom: 10px; /* مسافة تحت الكلمة */
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #000; /* لون الخط */
+  margin: 15px 0;             /* مسافة فوق وتحت */
+}
+
+
+/* أسماء الفساتين والإكسسوارات */
+.filter-item span:first-child {
+  font-size: 18px;    /* حجم الخط */
+  font-weight:normal;  /* تخليهم عريضين */
+  color: #333;        /* اللون */
+}
+/* الأعداد بين القوسين */
+.filter-item .filter-count {
+  color: #333;
+  font-size: 18px;
+}
+
+
+
+
+/* الخط اللي بيمشي عليه السلايدر */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: #333;   /* ← هنا اللون الأسمر */
+  border-radius: 3px;
+}
+
+/* الدائرة (المؤشر) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background: #333;   /* ← المؤشر أسمر */
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;   /* يظبط مكانه على الخط */
+}
+
+/* للفايرفوكس */
+input[type="range"] {
+  accent-color: #333; /* يخلي السلايدر أسمر */
+}
+
+
+
+
+.color-box {
+  display: flex;
+  flex-direction: column; /* الصفوف تحت بعض */
+  gap: 1px;              /* مسافة بين الصفين */
+  padding: 1px;
+}
+
+.row-colors {
+  display: flex;
+  justify-content: flex-start; /* يخلي الدواير جنب بعض */
+  gap:                   /* مسافة بين الدواير */
+}
+
+.color-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+

@@ -1,0 +1,53 @@
+.pagination {
+  display: flex;
+  justify-content: center; /* يخليها في النص */
+}
+.product-card-spce {
+  margin: 5px 5px 20px 5px; /* فاصل من الأربع اتجاهات */
+}
+
+
+
+
+
+
+.breadcrumb-container {
+  position: relative;
+  direction: rtl; /* عشان العربي يبدأ من اليمين */
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: flex-start; /* النص والأيقونة يلتصقوا باليمين */
+  align-items: center;
+  color: #1f1f1f;
+  font-weight: bold;
+  font-size: 20px;
+  background-image: url('../../assets/images/shretakhdar.jpg'); /* عدل مسار الصورة */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  height: 69px;
+}
+
+.breadcrumb-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(14, 215, 14, 0.47); /* 0.27 = نسبة الشفافية */
+  z-index: 0;
+}
+
+.breadcrumb-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* مسافة صغيرة بين الأيقونة والنص */
+  color: #1f1f1f;
+}
+
+.home-icon img {
+  width: 25px;
+  height: 25px;
+  
+}

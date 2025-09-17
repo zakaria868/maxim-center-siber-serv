@@ -1,0 +1,231 @@
+* {
+  font-family: "Cairo", sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  direction: rtl;
+}
+
+/* Wrapper */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 15px;
+}
+
+/* Card */
+.login-card {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  max-width: 420px;
+  width: 100%;
+}
+
+.login-logo {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.login-title {
+  color: #333;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.login-subtitle {
+  color: #666;
+  font-size: 15px;
+}
+
+.position-relative{
+  position: relative;
+}
+
+/* Inputs with icons */
+.input-with-icon {
+  
+  padding-right: 50px; /* مساحة للأيقونة من اليمين */
+  text-align: right;
+}
+.input-icon {
+  position: absolute;
+  top: 72%;              /* في النص */
+  right: 15px;           /* نفس مسافة الـ padding من اليمين */
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 18px;       /* مناسب لارتفاع input 40px */
+  pointer-events: none;
+}
+
+
+
+.form-label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* Mobile field */
+.country-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0 10px;
+  margin-left: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Buttons */
+.btn-login {
+  background-color: #90ee90;
+  border: none;
+  color: #333;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #7fdd7f;
+  transform: translateY(-1px);
+}
+
+/* Links */
+.create-account-link {
+  color: #28a745;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.create-account-link:hover {
+  text-decoration: underline;
+  color: #1e7e34;
+}
+
+/* Checkbox RTL */
+.form-check {
+  text-align: right;
+  margin: 0;
+}
+
+.form-check-input {
+  margin: 0;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.breadcrumb-container {
+  position: relative;
+  direction: rtl; /* عشان العربي يبدأ من اليمين */
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: flex-start; /* النص والأيقونة يلتصقوا باليمين */
+  align-items: center;
+  color: #1f1f1f;
+  font-weight: bold;
+  font-size: 20px;
+  background-image: url('../../assets/images/shretakhdar.jpg'); /* عدل مسار الصورة */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  height: 69px;
+}
+
+.breadcrumb-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(14, 215, 14, 0.47); /* 0.27 = نسبة الشفافية */
+  z-index: 0;
+}
+
+.breadcrumb-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* مسافة صغيرة بين الأيقونة والنص */
+  color: #1f1f1f;
+}
+
+.home-icon img {
+  width: 25px;
+  height: 25px;
+  
+}
+
+
+
+
+
+
+
+
+.makan-zarftasgeldokhol{
+   position: absolute;
+  top: 50%;              /* في النص */
+  right: 15px;           /* نفس مسافة الـ padding من اليمين */
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 18px;       /* مناسب لارتفاع input 40px */
+  pointer-events: none; 
+}
+
+.phone-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* التحكم في input */
+.form-control {
+  width: 100%;
+  padding-left: 40px; /* مسافة للأيقونة لو الأيقونة شمال */
+  padding-right: 40px; /* مسافة للأيقونة لو الأيقونة يمين */
+  text-align: left; /* أو right حسب اتجاه النص */
+}
+
+/* الأيقونة */
+.hatef-icon {
+  position: absolute;
+  top: 60%;
+  left :40px;
+  right:140px ;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 60px;
+  cursor: pointer;
+}
+
+/* لو عايز الأيقونة شمال */
+.hatef-icon.left {
+  left: 10px;
+}
+
+/* لو عايز الأيقونة يمين */
+.hatef-icon.right {
+  right: 10px;
+}

@@ -1,0 +1,27 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.search-input {
+  border: none;
+  padding: 8px 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-button {
+  background-color: #90ee90; /* أخضر فاتح */
+  border: none;
+  padding: 8px 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #7cd97c; /* لون أغمق عند الـ hover */
+}

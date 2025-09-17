@@ -1,0 +1,23 @@
+.ButtonProduct{
+    width:20px;
+    height: 10px;
+     background-image: linear-gradient(to right,#ccffcc 90%  , #b2f2bb 10%);
+     
+}
+
+.buttonAccount {
+  background-image: linear-gradient(to right,#ccffcc 90%  , #b2f2bb 10%);
+  /*background-color: #ccffcc !important; /* أخضر فاتح */
+  border-color: #ccffcc !important;
+  color: #212529 !important;
+  border-radius: 10px !important;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 41px;
+  width: 140px;
+}
+
+.buttonAccount:hover {
+  background-color: #b2f2bb !important; /* درجة أغمق شوي عند التحويم */
+}

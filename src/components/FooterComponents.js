@@ -5,15 +5,15 @@ import OBJECTS from './../assets/images/OBJECTS.png';
 
 const Footer = () => {
   return (
-   <footer className="footer direction my-footer">
+   <footer className="footer direction my-footer Zakaria">
 
       <div className="footer-container">
         <div className="footer-subscribe">
           <p>ادخل بريدك الإلكتروني لمتابعة كل جديد</p>
-        <form class="subscribe-form" dir="rtl">
-  <div class="input-wrapper">
-    <span class="input-icon">
-      <i class="fas fa-envelope"></i>
+        <form className="subscribe-form" dir="rtl">
+  <div className="input-wrapper">
+    <span className="input-icon">
+      <i className="fas fa-envelope"></i>
     </span>
     <input type="email" placeholder="يرجى إدخال بريدك الإلكتروني" />
     <button type="submit">اشترك</button>

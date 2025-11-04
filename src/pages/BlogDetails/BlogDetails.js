@@ -8,11 +8,22 @@ import ahmedatia from "../../assets/images/ahmedatia.png";
 import saadelmoula from "../../assets/images/saadelmoula.png";
 import ahmedeid from "../../assets/images/ahmedeid.png";
 import ahmedelba from "../../assets/images/ahmedelba.png";
+import iconhome from '../../assets/images/iconhome.png';
 
 const BlogDetails = ({ title, author, date, content, image }) => {
   return (
     <>
       <NavComponents />
+
+
+      <div className="breadcrumb-container">
+  <div className="breadcrumb-text">
+    <span className="home-icon">
+      <img src={iconhome} alt="homeIcon" />
+    </span>
+    <span>الرئيسية &lt;    المدونة &lt; إختيار الفستان المناسب لشكل جسمك </span>
+  </div>
+</div>
 
       <div className="blog-details-container">
         <img src={image || sorablogdetails} alt="Blog Main" className="blog-main-image" />

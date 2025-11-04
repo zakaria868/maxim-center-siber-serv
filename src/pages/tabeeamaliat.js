@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import NavComponents from '../components/NavComponents';
+import FooterComponents from '../components/FooterComponents';
+import { Container, Row, Col } from 'react-bootstrap';
+import iconhome from '../assets/images/iconhome.png';
+
 
 function InvoiceDetails() {
   const [coupon, setCoupon] = useState('');
@@ -19,7 +24,21 @@ function InvoiceDetails() {
   };
 
   return (
-    <div style={styles.container}>
+    <>
+    <NavComponents></NavComponents>
+      <div className="breadcrumb-container">
+  <div className="breadcrumb-text">
+    <span className="home-icon">
+      <img src={iconhome} alt="homeIcon" />
+    </span>
+    <span>الرئيسية &lt;   سلة الشراء </span>
+  </div>
+</div>
+
+    <Container>
+      <Row>
+         <Col md={6}></Col>
+        <Col md={6}> <div >
       <h3 style={styles.title}>تفاصيل الفاتورة</h3>
 
       <div style={styles.couponSection}>
@@ -43,7 +62,13 @@ function InvoiceDetails() {
       <div style={styles.total}><span>الإجمالي</span><span>{total} ريال</span></div>
 
       <button style={styles.checkoutBtn}>تابع عملية الشراء</button>
-    </div>
+    </div></Col>
+       
+      </Row>
+    </Container>
+   
+     <FooterComponents></FooterComponents>
+    </>
   );
 }
 

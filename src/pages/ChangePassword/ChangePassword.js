@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import NavComponents from '../../components/NavComponents';
+import FooterComponents from '../../components/FooterComponents';
+import iconhome from '../../assets/images/iconhome.png';
 
 function ChangePassword() {
   const [formData, setFormData] = useState({
@@ -39,6 +42,20 @@ function ChangePassword() {
   };
 
   return (
+    <>
+    <NavComponents></NavComponents>
+
+
+
+       <div className="breadcrumb-container">
+  <div className="breadcrumb-text">
+    <span className="home-icon">
+      <img src={iconhome} alt="homeIcon" />
+    </span>
+    <span>الرئيسية &lt;   سلة الشراء </span>
+  </div>
+</div>
+
     <div style={styles.container}>
       <h3 style={styles.title}>تغيير كلمة المرور</h3>
 
@@ -90,6 +107,8 @@ function ChangePassword() {
         <button style={styles.saveButton} onClick={handleSubmit}>حفظ</button>
       </div>
     </div>
+    <FooterComponents></FooterComponents>
+    </>
   );
 }
 

@@ -88,7 +88,7 @@
 }
 
 .add-btn {
-  background-color: #28a745;
+  background-color: linear-gradient(to right,#ccffcc 90%  , #b2f2bb 10%);
   color: white;
   padding: 10px 25px;
   border: none;
@@ -193,4 +193,54 @@
 
 .star.filled {
   color: #FFD700;
+}
+
+
+
+
+
+.buttonCarttwo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 41px;
+  width: 160px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Tajawal', sans-serif;
+  color: #212529;
+  background-color: #ccffcc; /* لون أخضر فاتح */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+/* الخلفية المتحركة */
+.buttonCarttwo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0; /* يبدأ من اليمين */
+  width: 0%;
+  height: 100%;
+  background: #b2f2bb; /* لون أخضر أغمق */
+  transition: width 1s ease;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+/* عند hover */
+.buttonCarttwo:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.buttonCarttwo:hover {
+  color: #fff; /* النص يصبح أبيض عند الـ hover */
 }

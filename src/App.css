@@ -1,6 +1,6 @@
 
 body {
-  font-family: 'Almarai', sans-serif !important;
+  font-family: 'Almarai',  !important;
 }
 .App {
   text-align: center;
@@ -224,3 +224,98 @@ body {
   font-style: Regular;
   font-size: 14px;
 }
+
+
+
+.size-img{
+  background-size:cover ;
+  height: 700px;
+}
+
+
+
+
+
+/* كود الريسبونسيف*/
+/*بداية كود الكاروزيل*/
+@media (max-width: 768px) {
+  .centered-text {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+  }
+
+  .bold-arabic {
+    font-size: 22px !important;
+  }
+
+  .carousel-wrapper .centered-text .bold-arabic .first-word,
+  .carousel-wrapper .centered-text .bold-arabic .modern-style {
+    font-size: 24px !important;
+  }
+
+  .subtext {
+    font-size: 16px;
+  }
+}
+
+
+/*ريسبونسيف نص احدث التصاميم*/
+@media  (max-width: 768px) {
+   .more-link {
+    position: static;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+   .display-4 {
+    position: absolute;
+    top: 20px;
+    font-size: 14px;
+  }
+
+   .lead {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+ .position-relative{
+  position: relative;
+ }
+ .position-absolute{
+  position: absolute;
+  bottom: -270px;
+  font-size: 0px;
+ }
+}
+
+
+
+
+
+
+@media (max-width: 769px) {
+  .starandnumber {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

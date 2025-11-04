@@ -1,0 +1,157 @@
+/* تنسيقات عامة */
+body {
+  margin: 0;
+  font-family: "Tahoma", Arial, sans-serif;
+  direction: rtl;
+  background-color: #fff;
+  color: #333;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* الهيدر */
+.header {
+  background: #a7f3d0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.logo {
+  color: #047857;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: #047857;
+}
+
+/* خطوات الدفع */
+.steps {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 20px;
+  font-weight: bold;
+}
+
+.steps .active {
+  color: #047857;
+}
+
+/* صندوق النجاح */
+.success-box {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.icon {
+  background: #bbf7d0;
+  color: #047857;
+  font-size: 40px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-box h2 {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.success-box p {
+  color: #666;
+  margin: 10px 0 20px;
+}
+
+.btn {
+  background: #047857;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background: #065f46;
+}
+
+/* الفوتر */
+.footer {
+  margin-top: auto;
+  background: #f3f4f6;
+  text-align: center;
+  padding: 15px;
+  color: #666;
+  font-size: 14px;
+}
+
+
+
+.FashalDafaa {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 41px;
+  width: 160px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Tajawal', sans-serif;
+  color: #212529;
+  background-color: #ccffcc; /* لون أخضر فاتح */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+/* الخلفية المتحركة */
+.FashalDafaa::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0; /* يبدأ من اليمين */
+  width: 0%;
+  height: 100%;
+  background: #b2f2bb; /* لون أخضر أغمق */
+  transition: width 1s ease;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+/* عند hover */
+.FashalDafaa:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.FashalDafaa:hover {
+  color: #fff; /* النص يصبح أبيض عند الـ hover */
+}

@@ -1,25 +1,60 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import './PrivacyPolicy.css';
+import NavComponents from '../../components/NavComponents';
+import FooterComponents from '../../components/FooterComponents';
+import iconhome from '../../assets/images/iconhome.png';
 
 function PrivacyPolicy() {
+  const [title, setTitle] = useState('');
+  const [paragraphs, setParagraphs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('https://maxim-test.courseszone-eg.com/api/pages/privacy')
+      .then((res) => {
+        if (!res.ok) throw new Error('حدث خطأ أثناء تحميل البيانات');
+        return res.json();
+      })
+      .then((data) => {
+        const { title, content } = data;
+        const paragraphsArray = content.split('\r\n').filter(p => p.trim() !== '');
+        setTitle(title);
+        setParagraphs(paragraphsArray);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
   return (
-    <div style={styles.container}>
-      <h2 style={styles.title}>سياسة الخصوصية</h2>
-      <p style={styles.paragraph}>
-        نحن ملتزمون بحماية خصوصية عملائنا وضمان أمان بياناتهم الشخصية عند استخدام متجرنا لخدمات بيع واستئجار الفساتين.
-        يتم جمع واستخدام المعلومات الشخصية فقط لتحسين تجربة التسوق وتقديم الخدمات المطلوبة بكفاءة.
-        تشمل البيانات التي قد نجمعها الاسم ومعلومات التواصل وتفاصيل الطلبات والتفضيلات الشخصية.
-        ويتم استخدام هذه المعلومات لمعالجة الطلبات وتخصيص العروض وتحسين خدماتنا.
-      </p>
-      <p style={styles.paragraph}>
-        نضمن أن بياناتك ستبقى سرية ولن يتم مشاركتها مع أي جهة ثالثة إلا بما تقتضيه الضرورة لتقديم الخدمات، مثل معالجة الدفع أو الشحن.
-        يتم تخزين بيانات العملاء بأمان باستخدام تقنيات حديثة للحماية من الوصول غير المصرح به.
-      </p>
-      <p style={styles.paragraph}>
-        نلتزم بالامتثال لكافة القوانين المعمول بها بشأن حماية البيانات، ونمنح عملائنا الحق في مراجعة بياناتهم وتحديثها أو طلب حذفها إذا رغبوا بذلك.
-        هدفنا هو الحفاظ على خصوصيتك وتقديم تجربة تسوق آمنة ومريحة.
-        نحن نستمر في مراجعة سياساتنا بشكل دائم من أجل تحسينها لتقديم أفضل مستوى من الأمان والخدمة.
-      </p>
-    </div>
+    <>
+      <NavComponents />
+
+      <div className="breadcrumb-container">
+        <div className="breadcrumb-text">
+          <span className="home-icon">
+            <img src={iconhome} alt="homeIcon" />
+          </span>
+          <span>الرئيسية &lt; {title || 'سياسة الخصوصية'}</span>
+        </div>
+      </div>
+
+      <div style={styles.container}>
+        <h2 style={styles.title} className="privacy-policy-title">{title}</h2>
+
+        {loading && <p>جاري تحميل البيانات...</p>}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+
+        {!loading && !error && paragraphs.map((para, index) => (
+          <p key={index} style={styles.paragraph}>{para}</p>
+        ))}
+      </div>
+
+      <FooterComponents />
+    </>
   );
 }
 

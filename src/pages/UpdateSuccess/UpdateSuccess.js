@@ -1,4 +1,7 @@
 import React from 'react';
+import iconhome from '../../assets/images/iconhome.png';
+import NavComponents from '../../components/NavComponents';
+import FooterComponents from '../../components/FooterComponents';
 
 function UpdateSuccess() {
   const handleShopNow = () => {
@@ -7,6 +10,21 @@ function UpdateSuccess() {
   };
 
   return (
+    <>
+    
+    <NavComponents></NavComponents>
+  
+     <div className="breadcrumb-container">
+  <div className="breadcrumb-text">
+    <span className="home-icon">
+      <img src={iconhome} alt="homeIcon" />
+    </span>
+    <span>الرئيسية &lt;   سلة الشراء </span>
+  </div>
+</div>
+    
+    
+   
     <div style={styles.container}>
       {/* أيقونة النجاح */}
       <div style={styles.successIcon}>
@@ -36,6 +54,8 @@ function UpdateSuccess() {
         تسوق الآن
       </button>
     </div>
+      <FooterComponents></FooterComponents>
+     </>
   );
 }
 

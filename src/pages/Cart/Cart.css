@@ -442,62 +442,11 @@ body {
 .logo-section p {
   font-size: 14px;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.6;       
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .steps-container {
-    flex-wrap: wrap;
-  }
 
-  .step-line {
-    display: none;
-  }
-
-  .product-card .row {
-    text-align: center;
-  }
-
-  .product-card .col-md-2,
-  .product-card .col-md-6,
-  .product-card .col-md-3,
-  .product-card .col-md-1 {
-    margin-bottom: 15px;
-  }
-
-  .nav-actions {
-    margin-top: 15px;
-  }
-
-  .newsletter {
-    flex-direction: column;
-  }
-
-  .newsletter button {
-    margin-top: 10px;
-    border-radius: 5px;
-  }
-}
-
-@media (max-width: 576px) {
-  .top-header {
-    text-align: center;
-  }
-
-  .social-icons {
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-
-  .main-content {
-    padding: 20px 0;
-  }
-
-  .sidebar-card {
-    margin-bottom: 30px;
-  }
-}
 
 
 
@@ -654,8 +603,8 @@ body {
   background: #fff;
   border-radius: 10px;
   padding: 20px;
-  width: 320px;
-  margin: auto;
+  width: 480px;
+  margin-left: 50px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   direction: rtl;
   font-family: "Tajawal", sans-serif;
@@ -763,4 +712,17 @@ body {
   max-width: 1200px;   /* تحدد عرض المحتوى */
   margin: 0 auto;      /* توسيط */
   gap: 11px;           /* مسافة بين الكروت والـ sidebar */
+}
+
+
+
+.tadel {
+  min-height: 1vh;
+}
+ 
+
+
+.margin-right{
+  padding-right:40px ;
+  
 }

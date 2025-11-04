@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import NAVcomponents from '../../components/NavComponents';
+import './UserProfile.css';
+import FooterComponents from '../../components/FooterComponents';
+import iconhome from '../../assets/images/iconhome.png';
+
 
 function UserProfile() {
   const [formData, setFormData] = useState({
@@ -24,6 +29,19 @@ function UserProfile() {
   };
 
   return (
+    <>
+    <NAVcomponents></NAVcomponents>
+    
+   <div className="breadcrumb-container">
+  <div className="breadcrumb-text">
+    <span className="home-icon">
+      <img src={iconhome} alt="homeIcon" />
+    </span>
+    <span>الرئيسية &lt;   سلة الشراء </span>
+  </div>
+</div>
+
+
     <div style={styles.container}>
       <h3 style={styles.title}>الملف الشخصي</h3>
 
@@ -97,6 +115,8 @@ function UserProfile() {
         </button>
       </div>
     </div>
+     <FooterComponents></FooterComponents>
+     </>
   );
 }
 

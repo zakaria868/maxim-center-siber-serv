@@ -1,4 +1,7 @@
 import React from 'react';
+import NavComponents from '../../components/NavComponents';
+import FooterComponents from '../../components/FooterComponents';
+import iconhome from '../../assets/images/iconhome.png';
 
 const orders = [
   {
@@ -25,6 +28,19 @@ function OrderSummary() {
   };
 
   return (
+    <>
+    <NavComponents></NavComponents>
+       <div className="breadcrumb-container">
+  <div className="breadcrumb-text">
+    <span className="home-icon">
+      <img src={iconhome} alt="homeIcon" />
+    </span>
+    <span>الرئيسية &lt;   سلة الشراء </span>
+  </div>
+</div>
+
+   
+  
     <div style={styles.container}>
       {orders.map((order, index) => (
         <div key={index} style={styles.orderBox}>
@@ -65,6 +81,8 @@ function OrderSummary() {
         إعادة الشراء
       </button>
     </div>
+     <FooterComponents></FooterComponents>
+      </>
   );
 }
 

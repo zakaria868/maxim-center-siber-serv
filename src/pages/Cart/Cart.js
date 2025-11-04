@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import NavComponents from "../../components/NavComponents";
 import FooterComponents from "../../components/FooterComponents";
 import {  } from "react-bootstrap";
@@ -13,6 +15,8 @@ import { Container, Row, Col } from "react-bootstrap";
 
 
 const Cart = () => {
+  const navigate = useNavigate();
+
   const [products, setProducts] = useState([
     { id: 1, name: "فستان بأطلالة حمراء 2025", price: 750, qty: 2, color: "red", size: 70, img: soraonesaletshera },
     { id: 2, name: "فستان مناسبة زفاف", price: 750, qty: 3, color: "black", size: 60, img: dressblack },
@@ -65,7 +69,7 @@ const Cart = () => {
 
       {/* Progress Steps */}
       <div className="progress-steps">
-        <div className="container">
+        <div className="container tadel">
           <div className="row justify-content-center">
             <div className="col-md-8">
               <div className="steps-container">
@@ -84,14 +88,18 @@ const Cart = () => {
 
       {/* Main Content */}
       <Container >
-        <Row>
+        <Row className="g-0">
+
           
-       <div className="row ">
+       
           {/* Products */}
-          <Col md={8}>
-          <div className="col-lg-9">
+         <Col md={7} className="margin-right"> // ← padding
+
+          <div >
             {products.map(product => (
-              <div key={product.id} className="card mb-3" style={{ maxWidth: "540px" }}>
+             <div key={product.id} className="card mb-3 w-100">
+
+
                 <div className="row g-0" dir="rtl">
                   {/* الصورة يمين */}
                   <div className="col-md-4" style={{ backgroundColor: "#ccffcc" }}>
@@ -132,8 +140,8 @@ const Cart = () => {
           </Col>
 
           {/* Sidebar */}
-           <Col lg={3}>
-          <div className="col-lg-3">
+           <Col md={5}>
+          <div >
             <div className="invoice-card">
               <h3 className="invoice-title">تفاصيل الفاتورة</h3>
 
@@ -172,11 +180,17 @@ const Cart = () => {
                 <span><span className="price-number total">{total}</span> <span className="price-currency">ريال</span></span>
               </div>
 
-              <button className="checkout-btn">تابع عملية الشراء</button>
+             <button 
+  className="checkout-btn" 
+  onClick={() => navigate('/CartTwo')}
+>
+  تابع عملية الشراء
+</button>
+
             </div>
           </div>
           </Col>
-        </div>
+        
 
         </Row>
       </Container>

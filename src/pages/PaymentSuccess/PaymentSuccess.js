@@ -1,7 +1,14 @@
 import React from 'react';
+import NavComponents from '../../components/NavComponents';
+import FooterComponents from '../../components/FooterComponents';
 
 function PaymentSuccess() {
   return (
+    <>
+    <NavComponents></NavComponents>
+    <FooterComponents></FooterComponents>
+    
+   
     <div style={styles.container}>
       {/* دائرة بعلامة صح */}
       <div style={styles.successIcon}>
@@ -29,6 +36,7 @@ function PaymentSuccess() {
       {/* زر تقييم المنتج */}
       <button style={styles.button}>تقييم المنتج</button>
     </div>
+     </>
   );
 }
 

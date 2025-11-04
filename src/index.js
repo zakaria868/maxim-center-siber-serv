@@ -32,6 +32,19 @@ import PaymentMethod from './pages/EtmamEldafaPaymentMethod/EtmamEldafaPaymentMe
 import ShippingForm from './pages/ShippingForm/ShippingFormAmaliatDafaa';
 import TermsAndConditions from './pages/TermsAndConditions/TermsAndConditions';
 
+ import PasswordChangeSuccess from './pages/TamTaghierKalematElmrorBenagah/TamTaghierKalematElmrorBenagah';
+import Moshtaraiaty from './pages/Moshtaraiaty/Moshtaraiaty';
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
+import PaymentSuccess from './pages/AmaliatAldafaaTamatBenagah/AmaliatAldafaaTamatBenagah';
+import FeedbackSuccess from './pages/TamErsalTaqyemakBenagah/TamErsalTaqyemakBenagah';
+import PaymentFailed from './pages/FashalDafaa/FashalDafaa';
+import TaqyemProduct from './pages/KetabatTaqyem/KetabatTaqyem';
+import Taqyem from './pages/Taqyem/Taqyem';
+import ShippingFormSheraa from './pages/ShippingFormAmaliatSHeraa/ShippingFormSheraa';
+import './index.css'; 
+
+
+ 
  
 
 
@@ -52,9 +65,10 @@ const router = createBrowserRouter([
     element: <AboutUs/>,
   },
   {
-    path: "products",
+    path: "/products",
     element: <Products/>,
   },
+  
   {
     path: "blogs",
     element: <Blogs/>,
@@ -86,7 +100,7 @@ const router = createBrowserRouter([
 
 
   {
-    path: "/CartTwo",
+    path: "/CartTwo/:id",
     element: <CartTwo/>,
   },
 
@@ -144,9 +158,51 @@ const router = createBrowserRouter([
     element: <UserProfile/>,
   },
 
+        {
+    path: "/PasswordChangeSuccess",
+    element: <PasswordChangeSuccess/>,
+  },
 
- 
- 
+ {
+  path: "/OrderItem",
+  element: <Moshtaraiaty />,
+},
+
+
+
+{
+  path: "/PrivacyPolicy",
+  element: < PrivacyPolicy/>,
+},
+
+
+{
+  path: "/PaymentSuccess",
+  element: < PaymentSuccess/>,
+},
+
+{
+  path: "/FeedbackSuccess",
+  element: < FeedbackSuccess/>,
+},
+
+{
+  path: "/PaymentFailed",
+  element: <PaymentFailed />,
+},
+
+ {
+  path: "/TaqyemProduct",
+  element: <TaqyemProduct />,
+},
+
+
+{
+  path: "/ShippingFormSheraa",
+  element: <ShippingFormSheraa />,
+},
+
+
   
 
   

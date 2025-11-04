@@ -1,23 +1,46 @@
-import React, { useState } from "react";
-import shearsaodi from '../../assets/images/shearsaodi.png';
-import usa from '../../assets/images/usa.png';
-import './CustomDropdown.css';
+import React, { useEffect, useState } from "react";
+import './CustomDropdown.css'; // ← تأكد من استيراد ملف الـ CSS
 
-const LangCurrencyDropdown = () => {
+const CurrencyDropdown = () => {
+  const [currencies, setCurrencies] = useState([]);
+  const [selectedCurrency, setSelectedCurrency] = useState(null);
   const [open, setOpen] = useState(false);
-  const [language, setLanguage] = useState("العربية ");
-  const [currency, setCurrency] = useState(" ر س");
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const toggleMenu = () => setOpen(!open);
 
+  useEffect(() => {
+    fetch("https://maxim-test.courseszone-eg.com/api/currencies")
+      .then((res) => {
+        if (!res.ok) throw new Error("فشل التحميل");
+        return res.json();
+      })
+      .then((data) => {
+        if (data.status === "success") {
+          setCurrencies(data.data);
+          const defaultCurrency = data.data.find(cur => cur.is_default === 1);
+          if (defaultCurrency) {
+            setSelectedCurrency(defaultCurrency);
+          }
+        } else {
+          throw new Error("بيانات غير صالحة");
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
   return (
-    <div style={{ position: "relative", display: "inline-block" }}>
-      {/* الزر */}
+    <div style={{ position: "relative", display: "inline-block", direction: "rtl" }}>
       <button
         onClick={toggleMenu}
         style={{
           padding: "8px 12px",
-          border: " #ccc",
+          border: "#ccc",
           borderRadius: "6px",
           background: "#ffffff",
           cursor: "pointer",
@@ -25,83 +48,33 @@ const LangCurrencyDropdown = () => {
           textAlign: "right",
         }}
       >
-        {language} - {currency} ▼
+        {selectedCurrency ? `${selectedCurrency.name} (${selectedCurrency.code})` : "اختر العملة"} ▼
       </button>
 
-      {/* القائمة */}
       {open && (
         <div className="dropdown-menu-custom">
-          {/* اللغة */}
-          <div style={{ marginBottom: "10px" }}>
-            <h4 className="dropdown-title">اللغة</h4>
-           <label className="radio-left">
-  <input
-    type="radio"
-    name="language"
-    checked={language === "العربية 🇸🇦"}
-    onChange={() => setLanguage("العربية 🇸🇦")}
-  />
-  <div className="text-with-flag">
-       <img src={shearsaodi} alt="🇸🇦" />
-    العربية
- 
-  </div>
-</label>
+          <h4 className="dropdown-title">العملة</h4>
 
+          {loading && <p>جاري التحميل...</p>}
+          {error && <p style={{ color: "red" }}>{error}</p>}
 
-           <label className="radio-left">
-  <input
-    type="radio"
-    name="language"
-    checked={language === "English 🇬🇧"}
-    onChange={() => setLanguage("English 🇬🇧")}
-  />
-  <div className="text-with-flag">
-     <img src={usa} alt="🇬🇧" />
-    English
-   
-  </div>
-</label>
-
-          </div>
-
-          <hr />
-
-          {/* العملة */}
-          <div>
-            <h4 className="dropdown-title">العملة</h4>
-            <label className="radio-left">
+          {!loading && !error && currencies.map((cur) => (
+            <label className="radio-left" key={cur.id}>
               <input
                 type="radio"
                 name="currency"
-                checked={currency === "ريال سعودي"}
-                onChange={() => setCurrency("ريال سعودي")}
+                checked={selectedCurrency?.id === cur.id}
+                onChange={() => setSelectedCurrency(cur)}
               />
-              ريال سعودي
+              <span>
+                {cur.name} ({cur.code}) - {parseFloat(cur.value).toFixed(2)}
+              </span>
             </label>
-            <label className="radio-left">
-              <input
-                type="radio"
-                name="currency"
-                checked={currency === "جنية مصري"}
-                onChange={() => setCurrency("جنية مصري")}
-              />
-              جنية مصري
-            </label>
-            <label className="radio-left">
-              <input
-                type="radio"
-                name="currency"
-                checked={currency === "دولار أمريكي"}
-                onChange={() => setCurrency("دولار أمريكي")}
-              />
-              دولار أمريكي
-            </label>
-          </div>
+          ))}
         </div>
       )}
     </div>
   );
 };
 
-export default LangCurrencyDropdown;
+export default CurrencyDropdown;

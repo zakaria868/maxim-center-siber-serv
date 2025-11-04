@@ -5,13 +5,10 @@ import './ButtonComponents.css';
 
 function TypesExample() {
   return (
-    <Button 
-      as={Link} 
-      to="/products" 
-      className="login-btn px-4 py-2 buttonDokhool"
-    >
-      منتجاتنا
-    </Button>
+    <Link to="/login" className="montagat">
+   منتجاتنا
+</Link>
+
   );
 }
 

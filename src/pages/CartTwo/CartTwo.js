@@ -1,170 +1,155 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import './CartTwo.css';
 import { FaShoppingCart, FaStar } from "react-icons/fa";
 
-import dressred from "../../assets/images/pic-home/dressred.png";
 import NavComponents from '../../components/NavComponents';
 import FooterComponents from '../../components/FooterComponents';
-import { Link } from 'react-router-dom';
-import { Card, Button } from 'react-bootstrap';
+
+import ReviewList from '../../pages/ReviwList';
+
+const BASE_IMAGE_URL = "https://maxim-test.courseszone-eg.com/storage/";
+
 const ProductPage = () => {
+  const { id } = useParams(); // 👈 ID من URL
+  const navigate = useNavigate();
+
+  const [product, setProduct] = useState(null);
+  const [activeTab, setActiveTab] = useState("none");
+
+  useEffect(() => {
+    fetch("https://maxim-test.courseszone-eg.com/api/products")
+      .then((res) => res.json())
+      .then((data) => {
+        const productList = data.data;
+        const foundProduct = productList.find(p => p.id === parseInt(id));
+        setProduct(foundProduct);
+      })
+      .catch((err) => console.error("فشل في تحميل بيانات المنتج", err));
+  }, [id]);
+
+  if (!product) {
+    return <p style={{ textAlign: 'center' }}>جارٍ تحميل بيانات المنتج...</p>;
+  }
+
+  const mainColor = product.colors?.[0]?.color_code || "#ccc";
+  const mainSize = product.sizes?.[0]?.size || "غير محدد";
+  const imageUrl = product.image ? BASE_IMAGE_URL + product.image : "";
+
   return (
     <>
-      {/* النافبار */}
       <NavComponents />
 
- <div
-      style={{
+      <div style={{
         display: "flex",
         justifyContent: "space-between",
-         flexDirection: "row-reverse", // هنا العكس
+        flexDirection: "row-reverse",
         alignItems: "center",
         background: "#f9fff9",
         borderRadius: "12px",
         padding: "20px",
         gap: "20px",
-      }}
-    >
-      {/* النصوص */}
-      <div style={{ flex: 1 }}>
-        <h2 style={{ marginBottom: "10px" }}>فستان بإطلالة حمراء</h2>
-        <p style={{ color: "#555", fontSize: "14px", marginBottom: "15px" }}>
-          فستان حريري بإطلالة حمراء أنيقة، تصميم عصري مميز لحفلات السهرات
-          والمناسبات. مصنوع من خامات عالية الجودة لإطلالة ساحرة.
-        </p>
+      }}>
+        {/* النصوص */}
+        <div style={{ flex: 1 }}>
+          <h2>{product.name}</h2>
+          <p style={{ color: "#555", fontSize: "14px", marginBottom: "15px" }}>
+            {product.description || 'لا يوجد وصف لهذا المنتج.'}
+          </p>
 
-        {/* اللون والمقاس */}
-        <div style={{ display: "flex", gap: "40px", marginBottom: "15px" }}>
-          <div>
-            <span>اللون</span>
-            <div
-              style={{
+          <div style={{ display: "flex", gap: "40px", marginBottom: "15px" }}>
+            <div>
+              <span>اللون</span>
+              <div style={{
                 width: "20px",
                 height: "20px",
                 borderRadius: "50%",
-                background: "red",
+                background: mainColor,
                 marginTop: "5px",
-              }}
-            ></div>
-          </div>
-          <div>
-            <span>المقاس</span>
-            <div
-              style={{
+                border: '1px solid #ccc'
+              }}></div>
+            </div>
+            <div>
+              <span>المقاس</span>
+              <div style={{
                 marginTop: "5px",
                 fontWeight: "bold",
-              }}
-            >
-              70
+              }}>{mainSize}</div>
             </div>
+          </div>
+
+          {/* التقييم */}
+          <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
+            {[...Array(4)].map((_, i) => (
+              <FaStar key={i} color="#FFD700" />
+            ))}
+            <FaStar color="#ddd" />
+            <span style={{ marginRight: "8px", color: "#777" }}>(+2763 تقييم)</span>
+          </div>
+
+          {/* السعر وزر */}
+          <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+            <button 
+              className="buttonCarttwo"
+              onClick={() => navigate('/ShippingForm')}
+            >
+              أضف للسلة
+            </button>
+            <span style={{ fontWeight: "bold", fontSize: "18px" }}>
+              {product.price ? `${product.price} USD` : 'السعر غير متوفر'}
+            </span>
           </div>
         </div>
 
-        {/* التقييم */}
-        <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
-          {[...Array(4)].map((_, i) => (
-            <FaStar key={i} color="#FFD700" />
-          ))}
-          <FaStar color="#ddd" />
-          <span style={{ marginRight: "8px", color: "#777" }}>(+2763 تقييم)</span>
-        </div>
-
-        {/* السعر وزر */}
-        <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-          <span style={{ fontWeight: "bold", fontSize: "18px" }}>750 ريال سعودي</span>
-         <Button 
-      as={Link} 
-      to="/Cart" 
-      className="login-btn px-4 py-2 buttonDokhool"
-    >
-      أضف للسلة
-    </Button>
+        {/* صورة المنتج */}
+        <div style={{ flex: 1, textAlign: "center" }}>
+          <img
+            src={imageUrl}
+            alt={product.name}
+            style={{ width: "250px", borderRadius: "8px" }}
+          />
+          <div style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px",
+            marginTop: "10px"
+          }}>
+            <img src={imageUrl} alt="thumbnail" width="60" />
+            <img src={imageUrl} alt="thumbnail" width="60" />
+            <img src={imageUrl} alt="thumbnail" width="60" />
+          </div>
         </div>
       </div>
 
-      {/* صورة المنتج */}
-      <div style={{ flex: 1, textAlign: "center" }}>
-        <img
-          src={dressred}
-          alt="فستان أحمر"
-          style={{ width: "250px", borderRadius: "8px" }}
-        />
+      {/* التبويبات */}
+      <div>
+        <div style={{
+          display: "flex",
+          gap: "20px",
+          justifyContent: "center",
+          marginBottom: "20px"
+        }}>
+          <button onClick={() => setActiveTab("reviews")}>التعليقات</button>
+          <button onClick={() => setActiveTab("related")}>منتجات ذات صلة</button>
+        </div>
 
-        {/* الصور المصغرة */}
-        <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginTop: "10px" }}>
-          <img src={dressred} alt="thumbnail" />
-          <img src={dressred} alt="thumbnail" />
-          <img src={dressred} alt="thumbnail" />
+        <div>
+          {activeTab === "reviews" && (
+            <div>
+              <h3> <ReviewList /></h3>
+              <p>هنا يظهر قسم التعليقات...</p>
+            </div>
+          )}
+
+          {activeTab === "related" && (
+            <div>
+              <h3>منتجات ذات صلة</h3>
+              <p>هنا تظهر المنتجات ذات الصلة...</p>
+            </div>
+          )}
         </div>
       </div>
-    </div>
 
-
-    {/* التعليقات */}
-<div className="product-reviews">
-  <div className="Profs">
-    <h3>التعليقات</h3>
-    <h3>منتجات ذات صلة</h3>
-  </div>
-
-  {/* التعليق 1 */}
-  <div className="review">
-    <img src={dressred} alt="User" className="avatar" />
-    <div>
-      <div className="stars">
-        <h4>أحمد عطية</h4>
-        {[...Array(4)].map((_, i) => (
-          <FaStar key={i} className="star filled" />
-        ))}
-        <FaStar className="star" />
-        <span>4.5</span>
-      </div>
-      <p>
-        الفستان رائع جدًا! اللون الأحمر ملفت والتصميم أنيق جدًا. القماش مريح
-        للغاية ومناسب للسهرات. أنصح به بشدة!
-      </p>
-    </div>
-  </div>
-
-  {/* التعليق 2 */}
-  <div className="review">
-    <img src={dressred} alt="User" className="avatar" />
-    <div>
-      <div className="stars">
-        <h4>منة محمد</h4>
-        {[...Array(5)].map((_, i) => (
-          <FaStar key={i} className="star filled" />
-        ))}
-        <span>5.0</span>
-      </div>
-      <p>
-        حلو جدًا، خامة ناعمة ومناسبة على المقاس بالضبط. التوصيل سريع والتغليف ممتاز.
-      </p>
-    </div>
-  </div>
-
-  {/* التعليق 3 */}
-  <div className="review">
-    <img src={dressred} alt="User" className="avatar" />
-    <div>
-      <div className="stars">
-        <h4>كريم علي</h4>
-        {[...Array(3)].map((_, i) => (
-          <FaStar key={i} className="star filled" />
-        ))}
-        <FaStar className="star" />
-        <FaStar className="star" />
-        <span>3.0</span>
-      </div>
-      <p>
-        شكله شيك بس المقاس كان أكبر شوية من المتوقع. محتاج أضبطه عند الترزي.
-      </p>
-    </div>
-  </div>
-</div>
-
-
-      {/* الفوتر */}
       <FooterComponents />
     </>
   );

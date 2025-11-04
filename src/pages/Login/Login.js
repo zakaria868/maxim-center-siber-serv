@@ -24,10 +24,12 @@ const Login = () => {
       alert("من فضلك ادخل البريد الإلكتروني وكلمة المرور");
     }
   };
+localStorage.setItem("user", JSON.stringify({ email }));
 
   return (
     <>
-      <NavComponents loggedIn={loggedIn} username={email} />
+      <NavComponents loggedIn={loggedIn} userName={email} />
+
 
       <div className="breadcrumb-container">
         <div className="breadcrumb-text">

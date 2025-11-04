@@ -1,0 +1,151 @@
+body {
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.success-container {
+  text-align: center;
+  color: #333;
+}
+
+.top-bar {
+  background-color: #d3fdd3;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-bar nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.logo {
+  font-weight: bold;
+  color: green;
+}
+
+.main-content {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.check-icon {
+  font-size: 60px;
+  color: green;
+  margin-bottom: 20px;
+}
+
+.shop-btn {
+  background-color: #a7f5a7;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.footer {
+  background-color: #d3fdd3;
+  padding: 30px;
+}
+
+.subscribe input {
+  padding: 10px;
+  width: 250px;
+  margin-left: 10px;
+}
+
+.subscribe button {
+  padding: 10px 20px;
+  background-color: #a7f5a7;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-links {
+  margin: 20px 0;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+.copy-right {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
+        
+.check-icon{
+  background: #bbf7d0;
+  color: #f0f3f2;
+  font-size: 100px;
+  width: 170px;
+  height: 170px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonDokhool {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 41px;
+  width: 160px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Tajawal', sans-serif;
+  color: #212529;  /* النص باللون الأسود */
+  background-color: #ccffcc; /* اللون الفاتح الخلفية */
+  border: none;
+  border-radius: 10px; /* الزوايا المدورة */
+  cursor: pointer;
+  overflow: hidden;  /* إخفاء أي جزء خارج الزر */
+  text-decoration: none;  /* إزالة التسطير */
+  transition: color 0.3s ease;  /* تأثير التغير اللوني عند التمرير */
+  z-index: 1;  /* لإبقاء الزر في المقدمة */
+}
+
+/* الخلفية المتحركة عند المرور */
+.buttonDokhool::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0; /* يبدأ من اليمين */
+  width: 0%;
+  height: 100%;
+  background: #b2f2bb; /* اللون الأخضر الغامق */
+  transition: width 1s ease; /* تأثير بطيء */
+  z-index: -1;
+  border-radius: 10px; /* الزوايا المدورة */
+}
+
+/* عند hover يتملي الخلفية */
+.buttonDokhool:hover::before {
+  width: 100%;
+  left: 0;  /* يتم البدء من اليسار */
+}
+
+.buttonDokhool:hover {
+  color: #fff;  /* يخلي النص أبيض عند المرور */
+}

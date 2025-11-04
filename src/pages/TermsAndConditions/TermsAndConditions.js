@@ -1,25 +1,65 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import NavComponents from '../../components/NavComponents';
+import FooterComponents from '../../components/FooterComponents';
+import iconhome from '../../assets/images/iconhome.png';
 
 function TermsAndConditions() {
+  const [title, setTitle] = useState('');
+  const [paragraphs, setParagraphs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('https://maxim-test.courseszone-eg.com/api/pages/terms')
+      .then((res) => {
+        if (!res.ok) throw new Error('فشل تحميل البيانات');
+        return res.json();
+      })
+      .then((data) => {
+        const { title, content } = data;
+
+        // تقسيم المحتوى إلى فقرات حسب \r\n أو حتى السطور الطويلة
+        const paragraphsArray = content
+          .split(/\r\n|\n|\r/) // يقسم بناءً على أي نوع سطر جديد
+          .map(p => p.trim())
+          .filter(p => p.length > 0); // حذف الفقرات الفارغة
+
+        setTitle(title);
+        setParagraphs(paragraphsArray);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
   return (
-    <div style={styles.container}>
-      <h2 style={styles.title}>الشروط والأحكام</h2>
-      <p style={styles.paragraph}>
-        عند استخدامك لمتجرنا الخاص ببيع واستئجار الفساتين، فإنك توافق على الالتزام بالشروط والأحكام التالية، بهدف أن نوفر تجربة تسوق آمنة ومريحة لجميع العملاء. يرجى قراءة هذه البنود بعناية.
-      </p>
-      <p style={styles.paragraph}>
-        جميع المنتجات والخدمات المتوفرة في المتجر مخصصة للاستخدام الشخصي فقط، ويمنع بيعها أو استخدامها لأغراض تجارية بدون إذن مسبق. الأسعار والعروض قابلة للتغيير دون إشعار مسبق. ونحتفظ بالحق في تعديل أو إلغاء الطلبات التي تنتهك سياساتنا.
-      </p>
-      <p style={styles.paragraph}>
-        يجب على العملاء التأكد من دقة المعلومات المقدمة عند إنشاء الحساب أو تقديم الطلبات. المتجر غير مسؤول عن أي تأخير أو خطأ ناتج عن تقديم معلومات غير صحيحة، وبالنسبة للمنتجات المؤجرة، يتم اعتماد تاريخ الاستخدام والبطاقة التي تم استخدامها لضمان الحجز. لن يتم قبول الطلبات غير المؤكدة أو غير المدفوعة.
-      </p>
-      <p style={styles.paragraph}>
-        نحتفظ بحقنا في رفض أو إلغاء أي طلب إذا تبين أنه ينتهك السياسات أو القوانين المعمول بها. استخدام المتجر يتطلب الالتزام الكامل بالشروط والأحكام، وقد يتم حظر الحساب في حال الإخلال بها.
-      </p>
-      <p style={styles.paragraph}>
-        قد يتم تحديث الشروط والأحكام من وقت لآخر لضمان توفير أفضل الخدمات. يُنصح العملاء بقراءة أي تحديث جديد. توافق على الالتزام بالشروط المحدثة، وإذا كان لديك أي استفسارات يمكنك التواصل مع فريق الدعم الخاص بنا.
-      </p>
-    </div>
+    <>
+      <NavComponents />
+
+      <div className="breadcrumb-container">
+        <div className="breadcrumb-text">
+          <span className="home-icon">
+            <img src={iconhome} alt="homeIcon" />
+          </span>
+          <span>الرئيسية &lt; {title || 'الشروط والأحكام'}</span>
+        </div>
+      </div>
+
+      <div style={styles.container}>
+        <h2 style={styles.title} className="privacy-policy-title">{title}</h2>
+
+        {loading && <p>جاري تحميل البيانات...</p>}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+
+        {!loading && !error && paragraphs.map((para, index) => (
+          <p key={index} style={styles.paragraph}>{para}</p>
+        ))}
+      </div>
+
+      <FooterComponents />
+    </>
   );
 }
 

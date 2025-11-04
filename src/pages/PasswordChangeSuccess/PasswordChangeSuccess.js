@@ -1,4 +1,6 @@
 import React from 'react';
+import NavComponents from '../../components/NavComponents';
+import FooterComponents from '../../components/FooterComponents';
 
 function PasswordChangeSuccess() {
   const handleShopClick = () => {

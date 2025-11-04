@@ -1,0 +1,7 @@
+.privacy-policy-title {
+  color: #007bff; /* تغيير اللون */
+  font-family: 'Tajawal', sans-serif; /* إضافة خط مخصص */
+  text-align: center; /* تحديد محاذاة العنوان */
+  font-size: 24px; /* تعديل حجم الخط */
+  margin-bottom: 20px;
+}

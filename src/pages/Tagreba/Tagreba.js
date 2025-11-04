@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Card, Button } from "react-bootstrap";
-import data from "../../data/products.json"; // استيراد ملف JSON
+import { useEffect, useState } from "react";
+ // استيراد ملف JSON
 // import dressred from '../../assets/images/pic-home/dressred.png';
 // import dressmove from '../../assets/images/pic-home/dressmove.png';
 // import dressblack from '../../assets/images/pic-home/dressblack.png';
@@ -9,6 +10,15 @@ import NavComponents from '../../components/NavComponents';
 import FooterComponents from '../../components/FooterComponents';
 
 function Tagreba() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("")
+      .then((res) => res.json())
+      .then((mohamed) => {
+        setData(mohamed.slice(0, 10)); // خذ أول 10 عناصر فقط
+      });
+  }, []);
   return (
     <>
     <NavComponents></NavComponents>

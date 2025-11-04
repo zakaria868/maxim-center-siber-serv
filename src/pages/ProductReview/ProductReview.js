@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import NavComponents from '../../components/NavComponents';
+import FooterComponents from '../../components/FooterComponents';
 
 function ProductReview() {
   const [rating, setRating] = useState(4);
@@ -14,6 +16,13 @@ function ProductReview() {
   };
 
   return (
+    <>
+    <NavComponents></NavComponents>
+    <FooterComponents></FooterComponents>
+    
+    
+    
+  
     <div style={styles.container}>
       {/* شريط المراحل */}
       <div style={styles.steps}>
@@ -66,6 +75,7 @@ function ProductReview() {
         style={styles.productImage}
       />
     </div>
+      </>
   );
 }
 

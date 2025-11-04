@@ -1,55 +1,58 @@
-import React from "react";
-import Accordion from "react-bootstrap/Accordion";
-import "./Branches.css";
-import iconlocation from '../../assets/images/iconlocation.png';
+import React, { useEffect, useState } from 'react';
 
-const branches = [
-  { id: 1, name: "المحلة" },
-  { id: 2, name: "الرياض" },
-  { id: 3, name: "المدينة" },
-  { id: 4, name: "دبي" },
-  { id: 5, name: "القاهرة" },
-  { id: 6, name: "المنصورة" },
-  { id: 7, name: "مكة" },
-  { id: 8, name: "طنطا" },
-];
+const BranchesList = () => {
+  const [branches, setBranches] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-const Branches = () => {
+  useEffect(() => {
+    fetch('https://maxim-test.courseszone-eg.com/api/branches')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not OK');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setBranches(data); // لأن البيانات عبارة عن Array مباشرة
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
   return (
-    
-    <Accordion defaultActiveKey="0" flush dir="rtl">
-      
-      {/* 🔍 فورم البحث فوق القائمة */}
-      <div className="accordion-form-wrapper width-form">
-        <form className="subscribe-form " dir="rtl">
-          <div className="input-wrapper ">
-            <span className="input-icon">
-              <i className="fas fa-search"></i>
-            </span>
-            <input type="text" placeholder="  إبحث بإسم الفرع" />
-            <button type="submit">بحث</button>
-          </div>
-        </form>
-      </div>
+    <div style={{ padding: '20px', direction: 'rtl', fontFamily: 'Arial' }}>
+      <h3>📍 فروعنا</h3>
 
-      {/* 📍 لستة الفروع */}
-      {branches.map((branch, idx) => (
-        <Accordion.Item eventKey={idx.toString()} key={branch.id}>
-          <Accordion.Header>
-            <span className="branch-header">
-              <img src={iconlocation} alt="icon" />
-              <span className="branch-name">{branch.name}</span>
-            </span>
-          </Accordion.Header>
+      {loading && <p>جاري تحميل البيانات...</p>}
+      {error && <p style={{ color: 'red' }}>حدث خطأ: {error}</p>}
 
-          <Accordion.Body>
-            <p>+966 123 456 789</p>
-          </Accordion.Body>
-        </Accordion.Item>
-      ))}
-    </Accordion>
-    
+      {!loading && !error && (
+        <ul style={{ listStyleType: 'none', padding: 0 }}>
+          {branches.map(branch => (
+            <li
+              key={branch.id}
+              style={{
+                border: '1px solid #ccc',
+                borderRadius: '8px',
+                padding: '15px',
+                marginBottom: '10px',
+                backgroundColor: '#f9f9f9'
+              }}
+            >
+              <h5>🏢 {branch.name}</h5>
+              <p>📍 العنوان: {branch.address}</p>
+              <p>📞 الهاتف: {branch.phone}</p>
+              <p>💬 واتساب: {branch.whatsapp}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 };
 
-export default Branches;
+export default BranchesList;

@@ -1,7 +1,13 @@
 import React from 'react';
+import NavComponents from '../../components/NavComponents';
+import FooterComponents from '../../components/FooterComponents';
 
 function PaymentFailed() {
   return (
+    <>
+    <NavComponents></NavComponents>
+    <FooterComponents></FooterComponents>
+  
     <div style={styles.container}>
       {/* دائرة بعلامة خطأ */}
       <div style={styles.errorIcon}>
@@ -28,6 +34,7 @@ function PaymentFailed() {
       {/* زر المحاولة مرة أخرى */}
       <button style={styles.button}>حاول الدفع مرة أخرى</button>
     </div>
+      </>
   );
 }
 

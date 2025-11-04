@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
+import NavComponents from '../../components/NavComponents';
+import FooterComponents from '../../components/FooterComponents';
 
 
 function InvoiceDetails() {
@@ -20,6 +22,15 @@ function InvoiceDetails() {
   };
 
   return (
+    <>
+    <NavComponents></NavComponents>
+    <FooterComponents></FooterComponents>
+    
+    
+    
+    
+    
+
     <div style={styles.container}>
       <h3 style={styles.title}>تفاصيل الفاتورة</h3>
 
@@ -45,6 +56,7 @@ function InvoiceDetails() {
 
       <button style={styles.checkoutBtn}>تابع عملية الشراء</button>
     </div>
+        </>
   );
 }
 

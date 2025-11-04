@@ -4,8 +4,92 @@
   font-family: 'Tajawal', sans-serif;
 }
 
+/*تنسيق ال بوب بانر*/
+/* ==== TOP GREEN BANNER ==== */
+.top-banner {
+  background-color: #88ff88; /* اللون الأخضر */
+  padding: 5px 0;            /* المسافة الرأسية */
+  height: 40px;              /* الارتفاع */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between; /* توزيع العناصر */
+}
+
+.top-banner .offer-text {
+  color: #2d2d2d;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.top-banner .right-side {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 100px;
+}
+
+.top-banner .social-icons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.top-banner .icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #2d2d2d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.top-banner .icon-circle:hover {
+  background-color: #555;
+}
+
+/* ==== استجابة للشاشات الصغيرة ==== */
+@media (max-width: 768px) {
+  .top-banner {
+    height: auto;
+    padding: 8px 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .top-banner .right-side {
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .top-banner .social-icons {
+    justify-content: center;
+  }
+}
+
+/* ==== للمقاسات الأكبر من 768px ==== */
+@media (min-width: 768px) {
+  .top-banner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+   .right-side {
+    justify-content: flex-start; /* النص في أقصى اليمين */
+  }
+
+   .social-icons {
+    justify-content: flex-end; /* الأيقونات في أقصى اليسار */
+  }
+}
 
 
+
+/*END TOP BANNER*/
 
 .nav-links li a {
   font-family: 'Tajawal', sans-serif;
@@ -31,14 +115,7 @@
   direction: rtl;
 }
 
-/* ==== TOP OFFER STRIP ==== */
-.top-offer {
-  background-color: #b2f2bb;
-  color: #000;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
-}
+
 
 /* ==== NAVBAR CONTENT ==== */
 .navbar-content {
@@ -165,17 +242,6 @@ width: 100%;
   padding: 5px 20px;
 }
 
-.social-icons a {
-  margin: 0 5px;
-  color: #000;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.offer-text {
-  font-size: 14px;
-  color: #333;
-}
 
 /* الشريط الرئيسي */
 .navbar-main {
@@ -386,28 +452,72 @@ width: 100%;
 
 
 
-.icon-circle {
+
+
+
+
+
+
+
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: 'Tajawal', sans-serif;
+  cursor: pointer;
+  /* احذف left: 100px; لأنها تلخبط المحاذاة */
+  z-index: 10000; /* خليها فوق كل العناصر */
+}
+
+.user-info {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: #2d2d2d; /* خلفية سمراء */
-  color: #fff; /* الأيقونة أبيض */
+  gap: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #2d2d2d;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 0;
+  min-width: 160px;
+  z-index: 99999; /* أعلى من أي عنصر آخر */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
-.icon-circle:hover {
-  background-color: #555; /* تغيير عند الـ hover */
+.dropdown-item:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown-item.logout {
+  color: red;
 }
 
 
 
-
-
-
+.custom-navbar,
+.navbar-content,
+.nav-buttons {
+  overflow: visible !important;
+}
 
 
 

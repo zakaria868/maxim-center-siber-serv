@@ -298,3 +298,270 @@ padding-right:170px;
 .soraolaabout {
   margin-top: -30px; /* صورة طالعة لفوق شوية */
 }
+
+
+
+/* ميديا كويرى للموبايل للبريد كرامب اللى اعلى الصفحة */
+@media (max-width: 576px) {
+  .breadcrumb-container {
+    padding: 8px 15px;
+  }
+
+  .breadcrumb-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 14px;
+  }
+
+  .home-icon img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .breadcrumb-path {
+    white-space: normal;
+    font-size: 14px;
+  }
+}
+/* ميديا كويرى للفقرة الاناقة تبدا معنا فى ماكسيم*/
+/*موبايل*/
+@media (max-width: 576px) {
+  .custom-jumbotron {
+    padding: 20px;
+    text-align: right;
+  }
+
+  .jumbotron-title {
+    font-size: 22px;
+  }
+
+  .jumbotron-text p {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+}
+
+
+
+/* 🎯==========================
+   📱 موبايل (شاشات صغيرة)
+=============================*/
+@media (max-width: 576px) {
+
+  /* المسار أعلى الصفحة */
+  .breadcrumb-container {
+    padding: 8px 15px;
+    font-size: 14px;
+    height: auto;
+    background-position: center;
+  }
+
+  .breadcrumb-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .home-icon img {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* فقرة الأناقة تبدأ معنا */
+  .custom-jumbotron {
+    padding: 15px;
+    text-align: right;
+  }
+
+  .jumbotron-title {
+    font-size: 22px;
+  }
+
+  .jumbotron-text p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* صور الأربع */
+  .about-images-row {
+    margin-bottom: 40px;
+    padding-left: 0;
+  }
+
+  .images-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .about-image {
+    width: 45%;
+    height: 180px;
+  }
+
+  .sorataltaabout,
+  .soraolaabout {
+    margin-top: 0;
+  }
+
+  /* الكروت (رؤية الشركة ورسالتنا) */
+  .aien-zarfabout {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .aien-zarfabout .card {
+    flex-direction: column !important;
+    text-align: center;
+    width: 90%;
+  }
+
+  .equal-images {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .margin-aien {
+    padding-right: 0;
+  }
+
+  /* الفريق */
+  .card {
+    width: 100% !important;
+    margin: auto;
+  }
+
+  .card img {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  /* تباعد عام */
+  .margin-jumb-trun {
+    margin: 20px 0;
+  }
+}
+
+
+
+
+/* 🎯==========================
+   📲 تابلت (شاشات متوسطة)
+=============================*/
+@media (max-width: 768px) and (min-width: 577px) {
+
+  /* البانر */
+  .breadcrumb-container {
+    font-size: 16px;
+    height: 60px;
+    background-position: center;
+  }
+
+  /* النص الرئيسي */
+  .custom-jumbotron {
+    padding: 25px;
+  }
+
+  .jumbotron-title {
+    font-size: 26px;
+  }
+
+  .jumbotron-text p {
+    font-size: 14px;
+  }
+
+  /* الصور */
+  .about-images-row {
+    padding-left: 20px;
+  }
+
+  .about-image {
+    width: 45%;
+    height: 220px;
+  }
+
+  /* الكروت */
+  .aien-zarfabout {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .aien-zarfabout .card {
+    width: 80%;
+  }
+
+  .equal-images {
+    width: 100px;
+    height: 100px;
+  }
+
+  .margin-aien {
+    padding-right: 0;
+  }
+
+  /* الفريق */
+  .card {
+    width: 90% !important;
+    margin: auto;
+  }
+}
+
+
+
+
+/* 🎯==========================
+   💻 شاشات متوسطة وكبيرة
+=============================*/
+@media (min-width: 992px) {
+
+  .breadcrumb-container {
+    height: 70px;
+    font-size: 20px;
+  }
+
+  .custom-jumbotron {
+    padding: 40px;
+    max-width: 900px;
+  }
+
+  .jumbotron-title {
+    font-size: 32px;
+  }
+
+  .jumbotron-text p {
+    font-size: 16px;
+  }
+
+  /* الصور */
+  .about-images-row {
+    padding-left: 60px;
+  }
+
+  .about-image {
+    width: 200px;
+    height: 300px;
+  }
+
+  /* الكروت */
+  .aien-zarfabout {
+    justify-content: space-between;
+  }
+
+  .equal-images {
+    width: 120px;
+    height: 120px;
+  }
+
+  .margin-aien {
+    padding-right: 100px;
+  }
+
+  /* الفريق */
+  .card {
+    width: 18rem !important;
+  }
+}

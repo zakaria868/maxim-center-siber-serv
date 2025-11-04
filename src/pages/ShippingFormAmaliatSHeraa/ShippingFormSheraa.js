@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import NavComponents from '../../components/NavComponents';
+import FooterComponents from '../../components/FooterComponents';
+import iconhome from '../../assets/images/iconhome.png';
 
-function ShippingForm() {
+function ShippingFormSheraa() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -20,6 +23,22 @@ function ShippingForm() {
   };
 
   return (
+    <>
+<NavComponents></NavComponents>
+
+ <div className="breadcrumb-container">
+  <div className="breadcrumb-text">
+    <span className="home-icon">
+      <img src={iconhome} alt="homeIcon" />
+    </span>
+    <span>الرئيسية &lt;   سلة الشراء </span>
+  </div>
+</div>
+<FooterComponents></FooterComponents>
+
+
+
+   
     <div style={styles.container}>
       <h3 style={styles.title}>تفاصيل الشحن</h3>
 
@@ -83,6 +102,7 @@ function ShippingForm() {
 
       <button style={styles.backBtn}>العودة إلى عربة التسوق</button>
     </div>
+     </>
   );
 }
 
@@ -148,4 +168,4 @@ const styles = {
   },
 };
 
-export default ShippingForm;
+export default ShippingFormSheraa;

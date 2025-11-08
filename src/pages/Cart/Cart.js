@@ -93,11 +93,12 @@ const Cart = () => {
           
        
           {/* Products */}
-         <Col md={7} className="margin-right"> // ← padding
+         <Col md={7} className="margin-right"> 
 
-          <div >
+          <div className="card-size" >
             {products.map(product => (
-             <div key={product.id} className="card mb-3 w-100">
+             <div key={product.id} className="card mb-3  product-card">
+
 
 
                 <div className="row g-0" dir="rtl">
@@ -108,11 +109,11 @@ const Cart = () => {
 
                   {/* النص شمال */}
                   <div className="col-md-8">
-                    <div className="delete-btn" onClick={() => deleteProduct(product.id)}>🗑️</div>
+                    
                     <div className="product-info">
                       <div className="product-title">{product.name}</div>
                       <div className="product-price">{product.price} ريال سعودي</div>
-
+                       <div className="delete-btn" onClick={() => deleteProduct(product.id)}>🗑️</div>
                       <div className="options">
                         <div className="option">
                           اللون
@@ -122,13 +123,18 @@ const Cart = () => {
                           المقاس
                           <div className="size-circle">{product.size}</div>
                         </div>
-                        <div className="option">
+                        <div className="option ">
                           عدد القطع
                           <div className="quantity-control">
                             <button className="quantity-btn" onClick={() => decreaseQuantity(product.id)}>-</button>
                             <span className="quantity">{product.qty}</span>
                             <button className="quantity-btn" onClick={() => increaseQuantity(product.id)}>+</button>
                           </div>
+                            
+                        </div>
+                        <div className="option">
+                          
+                         
                         </div>
                       </div>
                     </div>

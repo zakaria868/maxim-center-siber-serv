@@ -42,6 +42,9 @@ import TaqyemProduct from './pages/KetabatTaqyem/KetabatTaqyem';
 import Taqyem from './pages/Taqyem/Taqyem';
 import ShippingFormSheraa from './pages/ShippingFormAmaliatSHeraa/ShippingFormSheraa';
 import './index.css'; 
+import Profile from './pages/Profile/Profile';
+import Logout from './pages/Logout/Logout';
+import Orders from './pages/Orders/Orders';
 
 
  
@@ -200,6 +203,18 @@ const router = createBrowserRouter([
 {
   path: "/ShippingFormSheraa",
   element: <ShippingFormSheraa />,
+},
+{
+  path: "/Profile",
+  element: <Profile />,
+},
+{
+  path: "/Logout",
+  element: <Logout />,
+},
+{
+  path: "/Orders",
+  element: <Orders />,
 },
 
 

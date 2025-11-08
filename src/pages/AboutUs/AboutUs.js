@@ -151,7 +151,7 @@ const AboutUs = () => {
    <img src={zarfabout} className="img-fluid rounded-start equal-images" alt="..." />
 
       {/* النص */}
-      <div className="card-body text-right p-2 m-0">
+      <div className="card-body  p-2 m-0">
         <h5 className="card-title">رسالتنا</h5>
         <div className="blog-card" style={{ direction: 'rtl', textAlign: 'right' }}>
           <h5 className="line1 text-faded">

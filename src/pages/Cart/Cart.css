@@ -220,12 +220,14 @@ body {
 }
 
 .product-card {
-  width: 80%;
-  height: 180px;
+  width: 80% !important;
+ 
+  height: 80%;
+  
   background: #ccffcc;              /* خلفية بيضاء لكل كارت */
   border: 1px solid #ddd;        /* إطار خفيف */
   border-radius: 8px;            /* زوايا دائرية */
-  padding: 20px;                 /* مسافة داخلية */
+  padding: 1px !important;                 /* مسافة داخلية */
   margin-bottom: 15px;           /* مسافة بين الكروت */
   box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* ظل خفيف */
 }
@@ -291,7 +293,7 @@ body {
 
   background-color: #ccffcc; /* ✅ أخضر فاتح */
   padding: 1px;  
-  margin: 2px 2px 2px 6px;            /* مسافة داخلية للصورة */
+  margin: 1px 2px 2px 6px;            /* مسافة داخلية للصورة */
 }
 
 
@@ -525,10 +527,11 @@ body {
   display: flex;
   gap: 20px;
   align-items: center;
-  margin-bottom: 10px;
-  position: absolute;
-  top: 110px;
+  margin-bottom: 5%;  /* خليها بمسافة طبيعية تحت السعر */
+  position: relative; /* أزل التثبيت المطلق */
+  top: auto;          /* ألغِ التثبيت من الأعلى */
 }
+
 
 .option {
   text-align: center;
@@ -563,7 +566,10 @@ body {
   color: red;
   font-size: 22px;
   cursor: pointer;
-  margin-top: 10px; /* مسافة بسيطة فوقه */
+  /*تعديل مكان زرار الحذف سواء فوق أو تحت */
+   margin-top: -2% ;
+  /*تعديل مكان زرار الحذف سواء فوق أو تحت */
+  
   align-self: flex-start; /* يخليه بمحاذاة الكلام */
   position: absolute;
 
@@ -717,7 +723,7 @@ body {
 
 
 .tadel {
-  min-height: 1vh;
+  min-height: 1vh !important;
 }
  
 
@@ -726,3 +732,52 @@ body {
   padding-right:40px ;
   
 }
+
+
+/* التحكم فى مكان زرار الحذف عند التصغير*/
+@media (max-width: 768px) {
+  .options {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .option-quantity {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  .delete-btn {
+    font-size: 22px;
+    align-self: flex-end; /* تبقى مرتبة */
+    position: absolute;
+    bottom: 5%;
+  }
+}
+
+/* التحكم فى مكان زرار الحذف عند التصغير*/
+
+/* end modify ramz sala*/
+
+
+/*اعطاء الكارد بوزيشن للتحكم فى مكان زر الحذف*/
+.card-size{
+  position: relative;
+}
+/*اعطاء الكارد بوزيشن للتحكم فى مكان زر الحذف*/
+
+/* تعديل مكان صورة الكارت فى المنتصف*/
+.product-card .col-md-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccffcc;
+  }
+
+  .product-card .col-md-4 img {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+/* تعديل مكان صورة الكارت فى المنتصف*/

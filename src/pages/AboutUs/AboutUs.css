@@ -340,7 +340,26 @@ padding-right:170px;
     font-size: 10px;
     line-height: 1.6;
   }
+
+  .line1, .line2, .line3 {
+  width: 100%;
+  white-space: normal;   /* ✅ يخلي النص يلف عادي */
+  word-break: break-word; /* ✅ يخلي النص يقسم لو كان طويل جدًا */
+  text-align: center;    /* يخلي النص في النص */
+  margin: auto;
 }
+
+.line4, .line5, .line6{
+   width: 100%;
+  white-space: normal;   /* ✅ يخلي النص يلف عادي */
+  word-break: break-word; /* ✅ يخلي النص يقسم لو كان طويل جدًا */
+  text-align: center;    /* يخلي النص في النص */
+  margin: auto;
+}
+
+
+}
+
 
 
 
@@ -416,12 +435,15 @@ padding-right:170px;
   .aien-zarfabout .card {
     flex-direction: column !important;
     text-align: center;
-    width: 90%;
+    width: 100%;
   }
 
   .equal-images {
-    width: 80px;
-    height: 80px;
+   
+  width: 250px;
+  height: 30px;
+   /* يخلي الصورة كاملة بدون قص */
+
     margin-bottom: 10px;
   }
 
@@ -564,4 +586,9 @@ padding-right:170px;
   .card {
     width: 18rem !important;
   }
+}
+
+
+.line1{
+
 }
